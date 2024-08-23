@@ -1,0 +1,9 @@
+project:
+  output-dir: _docs
+
+website:
+  title: "pricing"
+  site-url: "https://Binjian.github.io/pricing"
+  description: "pricing strategy"
+  repo-branch: main
+  repo-url: "https://github.com/Binjian/pricing"
