@@ -5,4 +5,4 @@ d = { 'settings': { 'branch': 'main',
                 'doc_host': 'https://Binjian.github.io',
                 'git_url': 'https://github.com/Binjian/pricing',
                 'lib_path': 'pricing'},
-  'syms': {'pricing.core': {'pricing.core.foo': ('core.html#foo', 'pricing/core.py')}}}
+  'syms': {'pricing.core': {'pricing.core.foo': ('00.core.html#foo', 'pricing/core.py')}}}
