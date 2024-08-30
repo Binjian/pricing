@@ -1,0 +1,102 @@
+[
+  {
+    "objectID": "03.system.html",
+    "href": "03.system.html",
+    "title": "core",
+    "section": "",
+    "text": "source\n\nfoo\n\n foo ()",
+    "crumbs": [
+      "core"
+    ]
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "pricing",
+    "section": "",
+    "text": "This file will become your README and also the index of your documentation.",
+    "crumbs": [
+      "pricing"
+    ]
+  },
+  {
+    "objectID": "index.html#install",
+    "href": "index.html#install",
+    "title": "pricing",
+    "section": "Install",
+    "text": "Install\npip install pricing",
+    "crumbs": [
+      "pricing"
+    ]
+  },
+  {
+    "objectID": "index.html#how-to-use",
+    "href": "index.html#how-to-use",
+    "title": "pricing",
+    "section": "How to use",
+    "text": "How to use\nFill me in please! Don’t forget code examples:\n\n1+1\n\n2",
+    "crumbs": [
+      "pricing"
+    ]
+  },
+  {
+    "objectID": "02.config.html",
+    "href": "02.config.html",
+    "title": "core",
+    "section": "",
+    "text": "source\n\nfoo\n\n foo ()",
+    "crumbs": [
+      "core"
+    ]
+  },
+  {
+    "objectID": "04.connection.html",
+    "href": "04.connection.html",
+    "title": "core",
+    "section": "",
+    "text": "source\n\nfoo\n\n foo ()",
+    "crumbs": [
+      "core"
+    ]
+  },
+  {
+    "objectID": "00.core.html",
+    "href": "00.core.html",
+    "title": "core",
+    "section": "",
+    "text": "source\n\nfoo\n\n foo ()",
+    "crumbs": [
+      "core"
+    ]
+  },
+  {
+    "objectID": "01.data.core.html",
+    "href": "01.data.core.html",
+    "title": "core data structure",
+    "section": "",
+    "text": "source\n\nfoo\n\n foo ()",
+    "crumbs": [
+      "core data structure"
+    ]
+  },
+  {
+    "objectID": "099.sandbox.html",
+    "href": "099.sandbox.html",
+    "title": "pricing",
+    "section": "",
+    "text": "from jupyterlab.extensions.pypi import https_proxy_url\n#| hide\nfrom nbdev.showdoc import *\n\n\nfrom dotenv import load_dotenv\nimport os\nload_dotenv()\n\nTrue\n\n\n\nos.getenv('GC_QUOTE_API_CREDENTIALS')\nos.getenv('HTTP_PROXY')\nos.getenv('HTTPS_PROXY')\n\n'res/quote-api-365206-39d39b2fde07.json'\n\n\n'http://127.0.0.1:20171'\n\n\n'http://127.0.0.1:20171'\n\n\n\nfrom dotenv import dotenv_values\nconfig = dotenv_values(\"../.env\")\nkey = config.get('GC_QUOTE_API_CREDENTIALS')\n\n\nfrom google.cloud import bigquery\nimport pandas_gbq\nfrom google.oauth2 import service_account\ncredentials = service_account.Credentials.from_service_account_file(\"../\" + key)\n\n\nclient = bigquery.Client(credentials=credentials)\n\nQUERY = \"\"\"\n        select *\n        from `quote-api-365206.report.ride_dispatch_v` r\n        where dispatch_amount_net_usd is not null\n        limit 200\n        \"\"\"\n\n\nQUERY_DISINCT = \"\"\"\n        select count (*)\n        from `quote-api-365206.report.ride_dispatch_v` r\n        where trip_type is null\n        limit 200\n        \"\"\"\n\n\n!echo $HTTP_PROXY\n\nhttp://127.0.0.1:20171\n\n\n\n#query_job = client.query(QUERY)\n\n\ndf = pandas_gbq.read_gbq(QUERY,credentials=credentials)\n\nDownloading: 100%|██████████|\n\n\n\ndf_trip_type = pandas_gbq.read_gbq(QUERY_DISINCT,credentials=credentials)\n\nDownloading: 100%|██████████|\n\n\n\ndf.head()\n\n\n\n\n\n\n\n\nride_id\ntrip_no\ndispatch_id\ntrip_type\nride_stat\ndispatch_stat\npartner_tran_id\npartner_id\nfrom_fleet_id_as_customer\npickup_date\n...\nhas_complaint\nhas_fleet_complaint\nhas_penalty_complaint\nhas_ops_complaint\ngps_ad_check\ngps_cns_check\nscore\nincoming_dispatch_info_last_updated_at\ndispatch_info_last_updated_at\netl_time\n\n\n\n\n0\n2324292\n1\n345056\nNone\nAccepted\nAt destination\n161955\n1\n16\n2022-08-01\n...\n0\n0\n0\n0\n0\n0\nNone\n2022-07-08 20:18:48+00:00\n2022-08-01 23:58:01+00:00\n2024-08-29 23:05:33.393026+00:00\n\n\n1\n2398953\n0\n518874\nNone\nAccepted\nCustomer no show\n237411\n1\n16\n2022-11-24\n...\n1\n1\n0\n0\n0\n0\nNone\n2022-11-24 09:28:34+00:00\n2022-11-24 09:03:50+00:00\n2024-08-29 23:05:33.393026+00:00\n\n\n2\n2378500\n0\n472749\nNone\nAccepted\nAt destination\n216589\n1\n16\n2022-10-21\n...\n1\n0\n1\n1\n0\n0\nNone\n2023-01-10 16:48:45+00:00\n2023-01-10 01:08:03+00:00\n2024-08-29 23:05:33.393026+00:00\n\n\n3\n2382836\n0\n482760\nNone\nAccepted\nCustomer no show\n221063\n1\n16\n2022-11-25\n...\n1\n1\n0\n0\n0\n0\nNone\n2022-12-02 10:25:19+00:00\n2022-11-25 12:12:22+00:00\n2024-08-29 23:05:33.393026+00:00\n\n\n4\n3316247\n0\n2340475\npoint2point\nPending\nAt destination\n1162413\n1\n16\n2024-03-28\n...\n0\n0\n0\n0\n0\n0\nNone\n2024-04-18 05:23:39+00:00\n2024-04-18 05:24:06+00:00\n2024-08-29 23:05:33.393026+00:00\n\n\n\n\n5 rows × 56 columns\n\n\n\n\nQUERY_ROUTE = \"\"\"\n        SELECT r.*, p1.lat from_lat, p1.lng from_lng, p2.lat to_lat, p2.lng to_lng\n        FROM `report.ride_dispatch_v` r\n        left JOIN `report.dim_place` p1\n        ON r.pickup_place_id=p1.id\n        INNER JOIN `report.dim_place` p2\n        ON r.pickup_place_id=p2.id\n        ORDER BY ride_id DESC\n        limit 2;\n        \"\"\"\n\n\ndf_route = pandas_gbq.read_gbq(QUERY_ROUTE,credentials=credentials)\n\nDownloading: 100%|██████████|\n\n\n\ndf_route.head()\n\n\n\n\n\n\n\n\nride_id\ntrip_no\ndispatch_id\ntrip_type\nride_stat\ndispatch_stat\npartner_tran_id\npartner_id\nfrom_fleet_id_as_customer\npickup_date\n...\ngps_ad_check\ngps_cns_check\nscore\nincoming_dispatch_info_last_updated_at\ndispatch_info_last_updated_at\netl_time\nfrom_lat\nfrom_lng\nto_lat\nto_lng\n\n\n\n\n0\n3766119\n0\n3218599\npoint2point\nPending\nNone\n1584248\n2\n18\n2024-09-03\n...\n0\n0\nNone\n2024-08-29 22:51:31+00:00\nNaT\n2024-08-29 23:05:33.393026+00:00\n9.547790000\n100.062000000\n9.547790000\n100.062000000\n\n\n1\n3766118\n0\n3218598\npoint2point\nPending\nNone\n1584247\n2\n18\n2024-09-06\n...\n0\n0\nNone\n2024-08-29 22:51:12+00:00\nNaT\n2024-08-29 23:05:33.393026+00:00\n25.796914000\n-80.288455000\n25.796914000\n-80.288455000\n\n\n\n\n2 rows × 60 columns\n\n\n\n\ndf_route.dtypes\n\nride_id                                                 Int64\ntrip_no                                                 Int64\ndispatch_id                                             Int64\ntrip_type                                              object\nride_stat                                              object\ndispatch_stat                                          object\npartner_tran_id                                         Int64\npartner_id                                              Int64\nfrom_fleet_id_as_customer                               Int64\npickup_date                                            dbdate\npickup_time                                            dbtime\npickup_datetime                           datetime64[us, UTC]\npickup_local_datetime                          datetime64[us]\npickup_local_datetime_str                              object\npickup_place_id                                         Int64\ndropoff_place_id                                        Int64\npassenger_id                                            Int64\nvehicle_class_id                                        Int64\nvehicle_class                                          object\nservice_area_id                                         Int64\nvip                                                     Int64\nmeet_n_greet                                            Int64\nbooking_date                                           dbdate\nbooking_datetime                          datetime64[us, UTC]\nfrom_fleet_id                                           Int64\nto_fleet_id                                             Int64\nfleet_driver_id                                         Int64\ndistance                                                Int64\nduration                                                Int64\ntrip_count                                              Int64\nluggage_count                                           Int64\npassenger_count                                         Int64\ninfant_count                                            Int64\nchildren_count                                          Int64\nride_operator                                           Int64\nadditional_operator                                     Int64\ndispatch_operator                                       Int64\ndispatch_type                                          object\npartner_amount_currency                                object\noriginal_partner_amount_by_trip                        object\npartner_amount_usd                                     object\nelife_amount_usd                                       object\nelife_amount_usd_by_trip                               object\noriginal_dispatch_amount                               object\ndispatch_amount_net_usd                                object\nadditional_charge_amount_usd                           object\nhas_complaint                                           Int64\nhas_fleet_complaint                                     Int64\nhas_penalty_complaint                                   Int64\nhas_ops_complaint                                       Int64\ngps_ad_check                                            Int64\ngps_cns_check                                           Int64\nscore                                                  object\nincoming_dispatch_info_last_updated_at    datetime64[us, UTC]\ndispatch_info_last_updated_at             datetime64[us, UTC]\netl_time                                  datetime64[us, UTC]\nfrom_lat                                               object\nfrom_lng                                               object\nto_lat                                                 object\nto_lng                                                 object\ndtype: object",
+    "crumbs": [
+      "099.sandbox.html"
+    ]
+  },
+  {
+    "objectID": "05.dataflow.html",
+    "href": "05.dataflow.html",
+    "title": "core",
+    "section": "",
+    "text": "source\n\nfoo\n\n foo ()",
+    "crumbs": [
+      "core"
+    ]
+  }
+]
