@@ -5,4 +5,9 @@ d = { 'settings': { 'branch': 'main',
                 'doc_host': 'https://Binjian.github.io',
                 'git_url': 'https://github.com/Binjian/pricing',
                 'lib_path': 'pricing'},
-  'syms': {'pricing.core': {'pricing.core.foo': ('00.core.html#foo', 'pricing/core.py')}}}
+  'syms': { 'pricing.cconfig': {'pricing.cconfig.foo': ('02.config.html#foo', 'pricing/cconfig.py')},
+            'pricing.connection': {'pricing.connection.foo': ('04.connection.html#foo', 'pricing/connection.py')},
+            'pricing.core': {'pricing.core.foo': ('00.core.html#foo', 'pricing/core.py')},
+            'pricing.data.core': {'pricing.data.core.foo': ('01.data.core.html#foo', 'pricing/data/core.py')},
+            'pricing.dataflow': {'pricing.dataflow.foo': ('05.dataflow.html#foo', 'pricing/dataflow.py')},
+            'pricing.system': {'pricing.system.foo': ('03.system.html#foo', 'pricing/system.py')}}}
