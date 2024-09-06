@@ -9,5 +9,8 @@ d = { 'settings': { 'branch': 'main',
             'pricing.connection': {'pricing.connection.foo': ('04.connection.html#foo', 'pricing/connection.py')},
             'pricing.core': {'pricing.core.foo': ('00.core.html#foo', 'pricing/core.py')},
             'pricing.data.core': {'pricing.data.core.foo': ('01.data.core.html#foo', 'pricing/data/core.py')},
+            'pricing.data.database': { 'pricing.data.database.get_dataframe_from_sql': ( '01.data.database.html#get_dataframe_from_sql',
+                                                                                         'pricing/data/database.py')},
             'pricing.dataflow': {'pricing.dataflow.foo': ('05.dataflow.html#foo', 'pricing/dataflow.py')},
+            'pricing.preprocessing': {},
             'pricing.system': {'pricing.system.foo': ('03.system.html#foo', 'pricing/system.py')}}}
