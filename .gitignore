@@ -152,3 +152,9 @@ checklink/cookies.txt
 res/quote-api-*.json
 /pricing/*.py
 /pricing/data/
+/data/*.csv
+/nbs/*.js
+/nbs/index.html
+/nbs/output.json
+/data/*.sql
+/data/*.db
