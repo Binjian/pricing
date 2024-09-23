@@ -24,7 +24,7 @@ WITH
                           anon_3.ride_status_id,
                           anon_3.ride_status,
                           anon_4.dispatch_status_id,
-                          anon_4.distpatch_status,
+                          anon_4.dispatch_status,
                           anon_5.dispatch_type,
                           `elife-data-warehouse-prod.ods.ride_fleet_1`.name        AS fleet,
                           anon_6.partner_id,
@@ -89,7 +89,7 @@ WITH
                                             ON `elife-data-warehouse-prod.ods.ride_ride_1`.id = anon_3.ride_id
                             LEFT OUTER JOIN (SELECT `elife-data-warehouse-prod.ods.ride_dispatch_1`.id   AS ride_id,
                                                     `elife-data-warehouse-prod.ods.ride_dispatch_1`.stat AS dispatch_status_id,
-                                                    `elife-data-warehouse-prod.ods.ride_enum_1`.name     AS distpatch_status
+                                                    `elife-data-warehouse-prod.ods.ride_enum_1`.name     AS dispatch_status
                                              FROM `elife-data-warehouse-prod.ods.ride_dispatch` AS `elife-data-warehouse-prod.ods.ride_dispatch_1`
                                                       LEFT OUTER JOIN `elife-data-warehouse-prod.ods.ride_enum` AS `elife-data-warehouse-prod.ods.ride_enum_1`
                                                                       ON `elife-data-warehouse-prod.ods.ride_dispatch_1`.stat =
