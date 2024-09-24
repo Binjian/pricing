@@ -156,5 +156,5 @@ res/quote-api-*.json
 /nbs/*.js
 /nbs/index.html
 /nbs/output.json
-/data/*.sql
 /data/*.db
+/res/

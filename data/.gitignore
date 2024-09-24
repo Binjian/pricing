@@ -1,2 +1,3 @@
-/data/pricing_training_dataset_sample.csv
+*.csv
 *.ods
+*.csv#
