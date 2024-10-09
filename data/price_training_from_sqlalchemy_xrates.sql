@@ -173,6 +173,8 @@ WITH PricingRaw AS (SELECT `elife-data-warehouse-prod.ods.ride_ride_1`.id       
                          `elife-data-warehouse-prod.ods.ride_cur_exch_rate_history` AS `elife-data-warehouse-prod.ods.ride_cur_exch_rate_history_1`
                     WHERE `elife-data-warehouse-prod.ods.ride_ride_1`.from_time_str
                         > '2024-01-01'
+                      AND (anon_5.dispatch_type = 'auction'
+                        OR anon_5.dispatch_type = 'dispatch')
                       AND `elife-data-warehouse-prod.ods.ride_dispatch_1`.inserted_at BETWEEN `elife-data-warehouse-prod.ods.ride_cur_exch_rate_history_1`.effective_at
                         AND `elife-data-warehouse-prod.ods.ride_cur_exch_rate_history_1`.expire_at
                       AND `elife-data-warehouse-prod.ods.ride_cur_exch_rate_history_1`.from_cur = 'USD'
