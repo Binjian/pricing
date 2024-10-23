@@ -160,7 +160,7 @@ WITH
                             LEFT OUTER JOIN `elife-data-warehouse-prod.ods.ride_fleet` AS `elife-data-warehouse-prod.ods.ride_fleet_1`
                                             ON `elife-data-warehouse-prod.ods.ride_dispatch_1`.to_fleet_id =
                                                `elife-data-warehouse-prod.ods.ride_fleet_1`.id
-                   WHERE `elife-data-warehouse-prod.ods.ride_ride_1`.from_time_str > '2024-01-01'
+                   WHERE `elife-data-warehouse-prod.ods.ride_ride_1`.from_time_str > '2023-01-01'
                      AND `elife-data-warehouse-prod.ods.ride_dispatch_1`.currency = 'USD')
 SELECT *,
 FROM

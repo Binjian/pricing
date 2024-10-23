@@ -9,7 +9,7 @@ WITH TripTypeID AS (SELECT t1.ride_id,
                          t1.trip_type_id,
                          t2.name AS trip_type,
                   FROM TripTypeID AS t1
-                           LEFT JOIN `elife-data-warehouse-prod.ods.ride_enum AS` t2 ON t1.trip_type_id = t2.id),
+                           LEFT JOIN `elife-data-warehouse-prod.ods.ride_enum` AS t2 ON t1.trip_type_id = t2.id),
      RideStatus AS (SELECT t1.id   AS ride_id,
                            t1.stat AS ride_status_id,
                            t2.name AS ride_status,
