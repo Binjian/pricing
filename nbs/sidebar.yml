@@ -2,5 +2,6 @@ website:
   sidebar:
     contents:
       - index.ipynb
+      - 01.data.database.deduplication.ipynb
       - 01.data.database.sqlalchemy.ipynb
       - 01.data.utils.ipynb
