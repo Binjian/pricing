@@ -43,7 +43,7 @@ pip install pricing
     - We then take the union of start and end to get a single table with
       the minimal location set for labeling all the rows in the raw
       dataset.
-4.  data.database.processing.sql3
+4.  data.database.processing.label
     - We label the cleansed valid raw dataset (ca. 2 Mio) with the
       minimal location set by joining both with the same reduced
       precision coordinates.

@@ -3,5 +3,8 @@ website:
     contents:
       - index.ipynb
       - 01.data.database.deduplication.ipynb
-      - 01.data.database.sqlalchemy.ipynb
+      - 01.data.database.label.ipynb
+      - 01.data.database.processing.holidays.ipynb
+      - 01.data.database.processing.sql3.ipynb
+      - 01.data.preprocessing.timeseries.ipynb
       - 01.data.utils.ipynb
