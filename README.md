@@ -98,6 +98,16 @@ domain language.
 
 ### 
 
+# Processing flowchart
+
+## Data lineage
+
+<img src="doc/pricing_training_data_lineage.jpg" alt="Data lineage" width="80%">
+
+<img src="doc/cost_prediction_stat.svg" alt="Cost prediction with GT statistics" width="80%">
+
+<img src="doc/cost_prediction-nn.svg" alt="Cost prediction with GT statistics" width="80%">
+
 # Outlook
 
 ## Use GNN for better fixed price zones
