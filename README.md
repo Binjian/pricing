@@ -117,16 +117,55 @@ steps to get the labeled dataset for the cost prediction model.
 The following diagram depicts the cost & profit prediction based on the
 historical rides data given the fixed price zones, vehicle classes.
 
+- We use the fixed price zones, vehicle classes, and the historical
+  rides data to predict the cost and profit for the rides.
+- Historical rides data are extracted from raw data with the same route
+  start/end labels, service area id, and vehicle class id.
+- We filter out the irregular prices due to weekends, peak time,
+  nighttime and holidays.
+- We calculate the cost and profit from the complete ride information as
+  the mean value of all the historical dispatch costs. The profit is the
+  difference of the platform dispatch cost and elife dispatch cost
+  corresponding to the dispatch with the mean value.
+
 <img src="doc/cost_prediction_stat.svg" alt="Cost prediction with GT statistics" width="80%">
 
 ## Cost and profit prediction with a time series model (TODO)
 
 The following diagram depicts the cost & profit prediction based on the
-time series model given the fixed price zones, vehicle classes.
+time series model given the fixed price zones, vehicle classes. The
+training dataset is the same historical dataset used in the former
+statistical method. Each routes and vehicle classes are treated as a
+single time series model with the cost and profit as the target
+variable.
 
 <img src="doc/cost_prediction-nn.svg" alt="Cost prediction with GT statistics" width="80%">
 
 # Outlook
+
+## Use Exogeneous variables for time series price prediction
+
+Exogeneous variables consume information like vehicle class, holidays,
+events, weekdays, route distance, duration and other add-on infos and
+can be used to turn all dispatch/ride data into time series samples into
+generic samples for a holistic price prediction neural network model.
+This way we can treat almost all the dispatches with different vehicle
+classes and fixed price zones as generic time series samples and predict
+the cost and profit for the rides with a single big model, thus
+generalize the model for all the dispatches. But it’s a challenge to get
+the exogeneous variables for the rides and dispatches in the real world
+and the cost is increasing model size, complexity and training
+resources.
+
+For example we can use
+[Autogluon](https://auto.gluon.ai/dev/tutorials/timeseries/forecasting-indepth.html)
+or [Nixtla
+neuralforecast](https://nixtlaverse.nixtla.io/statsforecast/docs/how-to-guides/exogenous.html),
+[Meta
+NeuralProphet](https://neuralprophet.com/tutorials/tutorial05.html?highlight=exogenous)
+to predict the cost and profit for the rides with the exogeneous
+variables. Autogluon is a AutoML toolkit for deep learning models with a
+focus on time series prediction.
 
 ## Use GNN for better fixed price zones
 
@@ -137,13 +176,6 @@ better route properties like predicted route distance by navigation
 engine. The high density of the destination with navigation engine
 distance reveals the downtown area with high demand and the fixed price
 zones can be better clustered by the GNN model.
-
-## Use Exogeneous variables for time series price prediction
-
-Exogeneous variables consume information like vehicle class, holidays,
-events, weekdays, route distance, duration and other add-on infos and
-can be used to turn all dispatch/ride data into time series samples into
-generic samples for a holistic price prediction neural network model.
 
 ## Knowlege Graph for Fixed-Price-Zones, vehicle classes, and other entities
 
