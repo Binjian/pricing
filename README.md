@@ -7,8 +7,12 @@ Price prediction and forecasting
 
 ## Install
 
+1.  Clone the repo to local directory
+
+2.  Install the package as editable
+
 ``` sh
-pip install pricing
+pip install -e .
 ```
 
 ## How to use
