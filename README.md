@@ -102,9 +102,23 @@ domain language.
 
 ## Data lineage
 
+The flollowing diagram shows the data lineage of the raw data from the
+Google BigQuery data for cost price prediction and the data processing
+steps to get the labeled dataset for the cost prediction model.
+
 <img src="doc/pricing_training_data_lineage.jpg" alt="Data lineage" width="80%">
 
+## Cost and profit prediction with Ground Truth data from historical rides
+
+The following diagram depicts the cost & profit prediction based on the
+historical rides data given the fixed price zones, vehicle classes.
+
 <img src="doc/cost_prediction_stat.svg" alt="Cost prediction with GT statistics" width="80%">
+
+## Cost and profit prediction with a time series model (TODO)
+
+The following diagram depicts the cost & profit prediction based on the
+time series model given the fixed price zones, vehicle classes.
 
 <img src="doc/cost_prediction-nn.svg" alt="Cost prediction with GT statistics" width="80%">
 
