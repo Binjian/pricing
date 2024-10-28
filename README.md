@@ -55,7 +55,7 @@ pip install pricing
       from holidays package.
     - check and store rows with invalid service area in the raw table
       for manually fixing them later in SqlStudio
-6.  data.database.processing.route_cost_lut
+6.  data.database.processing.sql3
     - We then get the cost and profit from the labeled dataset by the
       dataframe by selecting the rows with the input route start/end,
       service area id, and vehicle class id. We get exclude the rows
